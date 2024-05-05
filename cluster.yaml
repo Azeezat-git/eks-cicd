@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cicd-demo
+  region: us-east-1
+
+nodeGroups:
+  - name: zee
+    instanceType: t2.medium
+    desiredCapacity: 3
+    ssh:
+      allow: false # will use ~/.ssh/id_rsa.pub as the default ssh key
+      # publicKeyPath: ~/.ssh/ec2_id_rsa.pub
